@@ -1,0 +1,31 @@
+services:
+    app:
+        build: .
+        container_name: laravel_app
+        volumes:
+            - ./:/var/www/html
+            - ./apache/000-default.conf:/etc/apache2/sites-available/000-default.conf
+        ports:
+            - '80:80'
+        environment:
+            - APACHE_DOCUMENT_ROOT=/var/www/html/public
+        networks:
+            - laravel
+    db:
+        image: 'mysql:5.7'
+        container_name: laravel_db
+        environment:
+            MYSQL_DATABASE: laravel
+            MYSQL_USER: root
+            MYSQL_PASSWORD: rootpassword
+            MYSQL_ROOT_PASSWORD: rootpassword
+        ports:
+            - '3306:3306'
+        volumes:
+            - db_data:/var/lib/mysql
+        networks:
+            - laravel
+networks:
+    laravel:
+volumes:
+    db_data:

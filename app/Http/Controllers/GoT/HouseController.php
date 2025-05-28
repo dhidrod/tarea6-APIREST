@@ -23,7 +23,6 @@ class HouseController extends Controller
             abort(404, "Casa “{$slug}” no encontrada.");
         }
 
-        // Extraemos el objeto house
         $house = $data[0];
 
         // Para cada miembro, obtenemos sus frases

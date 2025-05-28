@@ -16,7 +16,6 @@ class CharacterController extends Controller
 
     public function show(string $slug)
     {
-        // La API devuelve un array con un único elemento
         $response = Http::get("https://api.gameofthronesquotes.xyz/v1/character/{$slug}");
         $data     = $response->json();
 
@@ -24,7 +23,7 @@ class CharacterController extends Controller
             abort(404, "Personaje '{$slug}' no encontrado.");
         }
 
-        // Extraemos el primer (y único) elemento
+        // Extraemos el primer elemento
         $character = $data[0];
 
         return view('got.characters.show', compact('character'));

@@ -14,9 +14,8 @@
             </div>
             <div class="bg-white rounded-lg shadow p-6">
                 <h2 class="text-2xl font-semibold mb-4">Proveedor de API</h2>
-                <p class="mb-6">Panel de administración de productos (Próximamente).</p>
-                <button disabled
-                        class="inline-block px-4 py-2 bg-gray-400 text-white rounded cursor-not-allowed">
+                <p class="mb-6">Panel de administración de productos.</p>
+                <button disabled class="inline-block px-4 py-2 bg-gray-400 text-white rounded cursor-not-allowed">
                     En construcción
                 </button>
             </div>

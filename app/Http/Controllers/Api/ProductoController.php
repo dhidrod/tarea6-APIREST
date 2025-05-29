@@ -17,12 +17,9 @@ class ProductoController extends Controller
     public function store(Request $request)
     {
         $validated = $request->validate([
-            'nombre' => 'required|string|max:255',
-            'descripcion' => 'required|string',
-            'precio' => 'required|numeric|min:0',
-            'marca' => 'required|string|max:255',
-            'categoria' => 'required|string|max:255',
-            'stock' => 'required|integer|min:0'
+            'name' => 'required|string|max:255',
+            'description' => 'required|string',
+            'price' => 'required|numeric|min:0',
         ]);
 
         $producto = Product::create($validated);
@@ -41,12 +38,9 @@ class ProductoController extends Controller
     public function update(Request $request, Product $productoLimpieza)
     {
         $validated = $request->validate([
-            'nombre' => 'sometimes|required|string|max:255',
-            'descripcion' => 'sometimes|required|string',
-            'precio' => 'sometimes|required|numeric|min:0',
-            'marca' => 'sometimes|required|string|max:255',
-            'categoria' => 'sometimes|required|string|max:255',
-            'stock' => 'sometimes|required|integer|min:0'
+            'name' => 'required|string|max:255',
+            'description' => 'required|string',
+            'price' => 'required|numeric|min:0',
         ]);
 
         $productoLimpieza->update($validated);

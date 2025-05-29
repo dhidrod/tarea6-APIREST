@@ -15,4 +15,11 @@ class Product extends Model
         'description',
         'price',
     ];
+
+    protected function casts(): array
+    {
+        return [
+            'precio' => 'decimal:2',
+        ];
+    }
 }

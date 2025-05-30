@@ -25,5 +25,9 @@ Route::middleware('auth:sanctum')->group(function () {
     });
 
     // CRUD de productos de limpieza
-    Route::apiResource('productos-limpieza', ProductoController::class);
+    Route::get('/productos-limpieza', [ProductoController::class, 'index']);
+    Route::post('/productos-limpieza', [ProductoController::class, 'store']);
+    Route::get('/productos-limpieza/{id}', [ProductoController::class, 'show']);
+    Route::put('/productos-limpieza/{id}', [ProductoController::class, 'update']);
+    Route::delete('/productos-limpieza/{id}', [ProductoController::class, 'destroy']);
 });

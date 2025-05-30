@@ -33,7 +33,6 @@ class ProductoController extends Controller
 
     public function show($id): JsonResponse
     {
-        // DIAGNÓSTICO: Verificar si encuentra el producto
         $producto = Product::find($id);
 
         if (!$producto) {

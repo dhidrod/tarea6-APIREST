@@ -15,9 +15,6 @@ return Application::configure(basePath: dirname(__DIR__))
         $middleware->api(prepend: [
             \Laravel\Sanctum\Http\Middleware\EnsureFrontendRequestsAreStateful::class,
         ]);
-
-        // REMOVIDO: La referencia a VerifyCsrfToken que no existe
-        // El middleware API ya excluye CSRF por defecto
     })
     ->withExceptions(function (Exceptions $exceptions) {
         //
